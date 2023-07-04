@@ -1,4 +1,4 @@
-﻿@page "/login"
+﻿@page "/beyourselfassembly/login"
 @layout EmptyLayout
 
 @using Microsoft.JSInterop
@@ -20,7 +20,7 @@
 
         <h2 style="color:white;padding-top:150px;">Beyourself</h2>
 
-        <Input Placeholder="Email" @bind-Value="@Email" Style="background-color:white;width:350px;height:46px;" />
+        <Input Placeholder="Your Email" @bind-Value="@Email" Style="background-color:white;width:350px;height:46px;" />
 
         <Button Type="@ButtonType.Primary" OnClick=OnLogin  Style="background-color:blueviolet;color:white;width:350px;height:46px;">LOGIN USING EMAIL</Button>
     </div>
