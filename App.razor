@@ -1,5 +1,4 @@
-﻿@inject NavigationManager NavigationManager
-
+﻿
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
@@ -12,10 +11,3 @@
         </LayoutView>
     </NotFound>
 </Router>
-
-@code {
-    protected override void OnInitialized()
-    {
-        NavigationManager.NavigateTo("/");
-    }
-}
