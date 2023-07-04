@@ -8,9 +8,9 @@
   "resources": {
     "assembly": {
       "AntDesign.dll": "sha256-racDPdZAAXLU6rUdY4yCYw7wRw5zuSuPCvl1QZYxBOk=",
-      "BeyourselfAssembly.dll": "sha256-VFRepEg00v8dbMnIyXDhAdYQ9+nsUnM+jyh1VEsWess=",
+      "BeyourselfAssembly.dll": "sha256-3ZPnp1aei6t7M1JaQw\/sYKbkjP\/xqq5CDTbChMVHhig=",
       "Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll": "sha256-VGaB03HIjFg4jeK7BomIFzlhhY3vW5N+jWuRqZkbJsY=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-V3ymfrPh9I8pp5gptvPvweVRpRFQWEjZGfLRcuoA9H0=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-9ZSRH4mSJZaUhOR638e6stwJYDk9iL4ost7oHZQQhVY=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-Uok2UEg7dDmJhdl7IbZmCn56VPlbDxZ+M5EZGnvwhHg=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-foVWsYHI64hAsHpDbDzdLBjTou8LSNSQzfRjle0R+ng=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-d4wniGRoyyAPOfoKJCD+36nlci1hFT72WFCJAX5X9Tk=",
