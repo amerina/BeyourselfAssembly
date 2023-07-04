@@ -1,17 +1,57 @@
 ﻿@inherits LayoutComponentBase
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+@if (IsLoginPage == false)
+{
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
         </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+        <main>
+            <div class="top-row px-4">
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            </div>
+
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
+    </div>
+}
+else
+{
+    <div class="page">
+        <main>
+            <article class="content px-4">
+                <BeyourselfAssembly.Pages.Login LoginClicked="@LoginClicked" />
+            </article>
+        </main>
+    </div>
+}
+
+
+
+@code {
+    public bool IsLoginPage { get; set; } = true;
+
+    private void LoginClicked(string? email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            JSRuntime.InvokeAsync<object>("alert", "Email is required.");
+            return;
+        }
+        if (!System.Text.RegularExpressions.Regex.IsMatch(email, @"^[\w\.-]+@[\w\.-]+\.\w+$"))
+        {
+            JSRuntime.InvokeAsync<object>("alert", "Email is not valid.");
+            return;
+        }
+        IsLoginPage = false;
+        StateHasChanged();
+        NavigationManager.NavigateTo("index");
+    }
+
+}

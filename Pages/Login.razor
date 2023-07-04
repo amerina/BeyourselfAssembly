@@ -1,10 +1,8 @@
-﻿@page "/beyourselfassembly/login"
-@layout EmptyLayout
+﻿@page "/"
 
 @using Microsoft.JSInterop
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
-
 <style>
     #radius {
         width: 500px;
@@ -22,26 +20,15 @@
 
         <Input Placeholder="Your Email" @bind-Value="@Email" Style="background-color:white;width:350px;height:46px;" />
 
-        <Button Type="@ButtonType.Primary" OnClick=OnLogin  Style="background-color:blueviolet;color:white;width:350px;height:46px;">LOGIN USING EMAIL</Button>
+        <Button Type="@ButtonType.Primary" OnClick="() => LoginClicked(Email)" Style="background-color:blueviolet;color:white;width:350px;height:46px;">LOGIN USING EMAIL</Button>
     </div>
 </div>
 
 
 
 @code {
-    private string? Email{ get; set; }
-    private async Task OnLogin()
-    {
-        if (string.IsNullOrEmpty(Email))
-        {
-            await JSRuntime.InvokeAsync<object>("alert", "Email is required.");
-            return;
-        }
-        if (!System.Text.RegularExpressions.Regex.IsMatch(Email, @"^[\w\.-]+@[\w\.-]+\.\w+$"))
-        {
-            await JSRuntime.InvokeAsync<object>("alert", "Email is not valid.");
-            return;
-        }
-        NavigationManager.NavigateTo("/");
-    }
+    private string Email { get; set; }
+
+    [Parameter] 
+    public Action<string> LoginClicked { get; set; }
 }
