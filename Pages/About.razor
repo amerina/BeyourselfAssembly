@@ -1,0 +1,54 @@
+﻿@page "/about"
+
+<h1>Develop TimeLine</h1>
+
+<Timeline>
+    <TimelineItem Dot="dotTemplate">
+        In continuous development...
+    </TimelineItem>
+    <TimelineItem Color="green">Implementing the About page 2023-07-05</TimelineItem>
+    <TimelineItem Color="green">Implementing the Login page 2023-07-04</TimelineItem>
+    <TimelineItem Color="green">
+        <a href="https://www.wuzhaoyang.fun/BeyourselfAssembly/" target="_blank">
+            Design the overall architecture of the Beyourself APP 2023-07-03
+        </a>
+    </TimelineItem>
+    <Divider Type="DirectionVHType.Vertical" />
+    <TimelineItem Color="green">
+        <a href="https://www.wuzhaoyang.fun/2023/06/28/Find%20Your%20Life%20Goals/" target="_blank">
+            Post Beyourself article on my blog and got the idea to create an app 2023-06-23
+        </a>
+    </TimelineItem>
+    <TimelineItem Color="green">
+        <a href="https://github.com/amerina/Beyourself" target="_blank">
+            Create repository Beyourself 2023-05-11
+        </a>
+    </TimelineItem>
+</Timeline>
+
+<Card Style="width:600px;" Bordered="true">
+    <ChildContent>
+        <CardMeta AvatarTemplate="@avatarTemplate" TitleTemplate="@titleTemplate"/>
+    </ChildContent>
+</Card>
+
+@code {
+    RenderFragment dotTemplate =
+    @<Template>
+        <Icon Type="clock-circle" Style="font-size: 16px;" />
+    </Template>;
+
+    RenderFragment avatarTemplate = @<Avatar Size="large" src="https://avatars.githubusercontent.com/u/8970340?s=400&u=539b0c1d9cd00ead6d2d90c0cef20994b50773e3&v=4"></Avatar>;
+    RenderFragment titleTemplate =@<a href="mailto:wzyandi@live.com">Thanks for your email for any suggestions.</a>;
+}
+
+
+@*@foreach (string s in list)
+{
+    <div class="col-lg-3"><span class="oi @s" aria-hidden="true"></span> @s</div>
+}
+
+@code {
+    static readonly string[] list = new string[] { "oi-account-login", "oi-account-logout", "oi-action-redo", "oi-action-undo", "oi-align-center", "oi-align-left", "oi-align-right", "oi-aperture", "oi-arrow-bottom", "oi-arrow-circle-bottom", "oi-arrow-circle-left", "oi-arrow-circle-right", "oi-arrow-circle-top", "oi-arrow-left", "oi-arrow-right", "oi-arrow-thick-bottom", "oi-arrow-thick-left", "oi-arrow-thick-right", "oi-arrow-thick-top", "oi-arrow-top", "oi-audio-spectrum", "oi-audio", "oi-badge", "oi-ban", "oi-bar-chart", "oi-basket", "oi-battery-empty", "oi-battery-full", "oi-beaker", "oi-bell", "oi-bluetooth", "oi-bold", "oi-bolt", "oi-book", "oi-bookmark", "oi-box", "oi-briefcase", "oi-british-pound", "oi-browser", "oi-brush", "oi-bug", "oi-bullhorn", "oi-calculator", "oi-calendar", "oi-camera-slr", "oi-caret-bottom", "oi-caret-left", "oi-caret-right", "oi-caret-top", "oi-cart", "oi-chat", "oi-check", "oi-chevron-bottom", "oi-chevron-left", "oi-chevron-right", "oi-chevron-top", "oi-circle-check", "oi-circle-x", "oi-clipboard", "oi-clock", "oi-cloud-download", "oi-cloud-upload", "oi-cloud", "oi-cloudy", "oi-code", "oi-cog", "oi-collapse-down", "oi-collapse-left", "oi-collapse-right", "oi-collapse-up", "oi-command", "oi-comment-square", "oi-compass", "oi-contrast", "oi-copywriting", "oi-credit-card", "oi-crop", "oi-dashboard", "oi-data-transfer-download", "oi-data-transfer-upload", "oi-delete", "oi-dial", "oi-document", "oi-dollar", "oi-double-quote-sans-left", "oi-double-quote-sans-right", "oi-double-quote-serif-left", "oi-double-quote-serif-right", "oi-droplet", "oi-eject", "oi-elevator", "oi-ellipses", "oi-envelope-closed", "oi-envelope-open", "oi-euro", "oi-excerpt", "oi-expand-down", "oi-expand-left", "oi-expand-right", "oi-expand-up", "oi-external-link", "oi-eye", "oi-eyedropper", "oi-file", "oi-fire", "oi-flag", "oi-flash", "oi-folder", "oi-fork", "oi-fullscreen-enter", "oi-fullscreen-exit", "oi-globe", "oi-graph", "oi-grid-four-up", "oi-grid-three-up", "oi-grid-two-up", "oi-hard-drive", "oi-header", "oi-headphones", "oi-heart", "oi-home", "oi-image", "oi-inbox", "oi-infinity", "oi-info", "oi-italic", "oi-justify-center", "oi-justify-left", "oi-justify-right", "oi-key", "oi-laptop", "oi-layers", "oi-lightbulb", "oi-link-broken", "oi-link-intact", "oi-list-rich", "oi-list", "oi-location", "oi-lock-locked", "oi-lock-unlocked", "oi-loop-circular", "oi-loop-square", "oi-loop", "oi-magnifying-glass", "oi-map-marker", "oi-map", "oi-media-pause", "oi-media-play", "oi-media-record", "oi-media-skip-backward", "oi-media-skip-forward", "oi-media-step-backward", "oi-media-step-forward", "oi-media-stop", "oi-medical-cross", "oi-menu", "oi-microphone", "oi-minus", "oi-monitor", "oi-moon", "oi-move", "oi-musical-note", "oi-paperclip", "oi-pencil", "oi-people", "oi-person", "oi-phone", "oi-pie-chart", "oi-pin", "oi-play-circle", "oi-plus", "oi-power-standby", "oi-print", "oi-project", "oi-pulse", "oi-puzzle-piece", "oi-question-mark", "oi-rain", "oi-random", "oi-reload", "oi-resize-both", "oi-resize-height", "oi-resize-width", "oi-rss-alt", "oi-rss", "oi-script", "oi-share-boxed", "oi-share", "oi-shield", "oi-signal", "oi-signpost", "oi-sort-ascending", "oi-sort-descending", "oi-spreadsheet", "oi-star", "oi-sun", "oi-tablet", "oi-tag", "oi-tags", "oi-target", "oi-task", "oi-terminal", "oi-text", "oi-thumb-down", "oi-thumb-up", "oi-timer", "oi-transfer", "oi-trash", "oi-underline", "oi-vertical-align-bottom", "oi-vertical-align-center", "oi-vertical-align-top", "oi-video", "oi-volume-high", "oi-volume-low", "oi-volume-off", "oi-warning", "oi-wifi", "oi-wrench", "oi-x", "oi-yen", "oi-zoom-in", "oi-zoom-out" };
+}
+*@
